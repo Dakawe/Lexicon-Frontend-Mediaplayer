@@ -1,0 +1,295 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  font-family: "gotham";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.animated-background-wrap {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.animated-background {
+  background-image: url(space.png);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+
+  scale: 2;
+
+  animation: rotate 300s linear infinite;
+}
+
+@keyframes rotate {
+  50% {
+    scale: 4;
+    transform: rotate(180deg);
+  }
+  100% {
+    scale: 2;
+    transform: rotate(360deg);
+  }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #736c93;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.main-wrap {
+  margin-left: 100px;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  border: 1px solid #736c93;
+  background-image: url(img-rocket-to-the-moon.jpg);
+  background-size: cover;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 50px 50px 130px rgba(68, 62, 161, 0.2);
+}
+
+.playlist-header {
+  border-bottom: 2px solid #736c93;
+  font-size: 16px;
+  width: 100%;
+  background-color: rgba(14, 6, 36, 0.9);
+  padding: 8px;
+  padding-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.playlist-title {
+  margin-inline: 200px;
+  font-size: 18px;
+}
+
+/* The two main sections in the the music-player */
+.playlist-songs {
+  width: 50%;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.playlist-playbar {
+  width: 50%;
+  background-color: rgba(27, 28, 73, 0.9);
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+/* The two main sections in the the music-player */
+
+#playlist-album {
+  width: 275px;
+  margin-block: 25px;
+  border: 3px double white;
+  box-shadow: 5px 5px 25px darkcyan;
+  border-radius: 25px;
+}
+#playlist-artist {
+  font-variant-caps: small-caps;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+#playlist-song {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top:3px;
+  color: rgb(196, 189, 244);
+}
+
+.progress-wrapper {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.progress-bar {
+  width: 250px;
+  height: 10px;
+  border: 1px solid rgb(63, 63, 94);
+  #current-time {
+    width: 0;
+    height: 100%;
+    background-color: rgba(240, 236, 251, 0.9);
+  }
+}
+
+.start-time {
+  width: 50px;
+  text-align: center;
+}
+.end-time {
+  width: 50px;
+  text-align: right;
+}
+
+.playbar {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .p-c {
+    opacity: 0.65;
+    font-size: 50px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .p-c:hover {
+    opacity: 1;
+  }
+  .f-r {
+    opacity: 0.65;
+    font-size: 33px;
+    margin-left: 50px;
+    cursor: pointer;
+  }
+  .f-r:hover {
+    opacity: 1;
+  }
+  .f-f {
+    opacity: 0.65;
+    font-size: 33px;
+    margin-right: 50px;
+    cursor: pointer;
+  }
+  .f-f:hover {
+    opacity: 1;
+  }
+}
+
+.songbox {
+  cursor: pointer;
+  background-color: black;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  border-bottom: 1px solid rgb(15, 15, 15);
+}
+
+.album-cover {
+  margin-left: 15px;
+  width: auto;
+  height: 75%;
+  border: 1px solid rgb(53, 53, 53);
+  border-radius: 7px;
+}
+.playlist-wrapper {
+  margin-left: 10px;
+  width: 65%;
+}
+.song-title {
+  font-family: "gotham-bold";
+  font-size: 16px;
+  font-variant-caps: small-caps;
+  color: grey;
+}
+.album-title {
+  font-size: 15px;
+  color: darkgrey;
+}
+
+.play-icon {
+  color: rgb(67, 67, 67);
+}
+
+@font-face {
+  font-family: "gotham";
+  src: url(fonts/GothamLight.ttf);
+}
+
+@font-face {
+  font-family: "gotham-bold";
+  src: url(fonts/Gotham-Bold.otf);
+}
+
+.songbox:hover {
+  background-color: rgba(0, 0, 25, 0.9);
+  .play-icon {
+    color: rgb(141, 141, 141);
+  }
+  .playlist-wrapper > .song-title {
+    color: white;
+  }
+  .playlist-wrapper > .album-title {
+    color: white;
+  }
+  .album-cover {
+    border: 1px solid white;
+    animation: album-hover 0.6s forwards;
+  }
+}
+
+@keyframes album-hover {
+  100% {
+    transform: scale(1.1);
+  }
+}
+@keyframes album-playing {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.songbox-live {
+  overflow: hidden;
+  background-color: rgba(0, 0, 25, 0.76);
+  border-block: 1px solid grey;
+  .playlist-wrapper > .song-title {
+    color: white;
+  }
+  .playlist-wrapper > .album-title {
+    color: white;
+  }
+  .album-cover {
+    border: 2px solid white;
+    border-radius: 50px;
+    animation: album-playing 7s linear infinite;
+  }
+  .play-icon {
+    color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    margin: 0;
+    padding: 0;
+  }
+}

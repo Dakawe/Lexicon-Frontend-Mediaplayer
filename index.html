@@ -4,6 +4,114 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="icon" href="data:,">
   </head>
-  <body></body>
+  <body>
+    <div class="animated-background-wrap">
+      <div class="animated-background"></div>
+    </div>
+    <main class="main-wrap" id="m-player">
+      <section class="playlist-header">
+        <span class="material-icons">arrow_back</span>
+        <p class="playlist-title">Playlist - Moody</p>
+        <span class="material-icons">menu</span>
+      </section>
+
+      <section class="playlist-songs">
+        <article id="songbox-first" class="songbox" onclick="play(this, 'songbox-live', 'rocket.mp3', 'img-rocket-to-the-moon.jpg')">
+          <img src="img-rocket-to-the-moon.jpg" alt="" class="album-cover" />
+          <div class="playlist-wrapper">
+            <p class="song-title">A Rocket to the moon</p>
+            <p class="album-title">Like we used to</p>
+          </div>
+          <span class="material-icons play-icon">play_circle</span>
+        </article>
+        <article class="songbox" onclick="play(this, 'songbox-live', 'legend.mp3', 'img-john-legend.jpg')">
+          <img src="img-john-legend.jpg" alt="" class="album-cover" />
+          <div class="playlist-wrapper">
+            <p class="song-title">John Legend</p>
+            <p class="album-title">Save the room</p>
+          </div>
+          <span class="material-icons play-icon">play_circle</span>
+        </article>
+        <article class="songbox" onclick="play(this, 'songbox-live', 'j-legend2.mp3', 'img-john-legend-2.jpg')">
+          <img src="img-john-legend-2.jpg" alt="" class="album-cover" />
+          <div class="playlist-wrapper">
+            <p class="song-title">John Legend</p>
+            <p class="album-title">We just don't care</p>
+          </div>
+          <span class="material-icons play-icon">play_circle</span>
+        </article>
+        <article class="songbox" onclick="play(this, 'songbox-live', 'dakota.mp3', 'img-rocket-to-the-moon.jpg')">
+          <img src="img-rocket-to-the-moon.jpg" alt="" class="album-cover" />
+          <div class="playlist-wrapper">
+            <p class="song-title">A Rocket to the moon</p>
+            <p class="album-title">Dakota</p>
+          </div>
+          <span class="material-icons play-icon">play_circle</span>
+        </article>
+        <article class="songbox" onclick="play(this, 'songbox-live', 'Candyman.mp3', 'img-candyman.webp')">
+          <img src="img-candyman.webp" alt="" class="album-cover" />
+          <div class="playlist-wrapper">
+            <p class="song-title">Zedd & Aloe Blacc</p>
+            <p class="album-title">Candyman</p>
+          </div>
+          <span class="material-icons play-icon">play_circle</span>
+        </article>
+        <article class="songbox" onclick="play(this, 'songbox-live', 'human.mp3', 'img-rag-n-bone.png')">
+          <img src="img-rag-n-bone.png" alt="" class="album-cover" />
+          <div class="playlist-wrapper">
+            <p class="song-title">Rag'n'Bone Man</p>
+            <p class="album-title">Human</p>
+          </div>
+          <span class="material-icons play-icon">play_circle</span>
+        </article>
+         <article class="songbox" onclick="play(this, 'songbox-live', 'shots.mp3', 'img-imagine-dragons.jpg')">
+          <img src="img-imagine-dragons.jpg" alt="" class="album-cover" />
+          <div class="playlist-wrapper">
+            <p class="song-title">Imagine Dragons</p>
+            <p class="album-title">Shots (Broiler Remix)</p>
+          </div>
+          <span class="material-icons play-icon">play_circle</span>
+        </article>
+          </article>
+         <article class="songbox" onclick="play(this, 'songbox-live', 'one-more-time.mp3', 'blink182.webp')">
+          <img src="blink182.webp" alt="" class="album-cover" />
+          <div class="playlist-wrapper">
+            <p class="song-title">Blink 182</p>
+            <p class="album-title">One More Time</p>
+          </div>
+          <span class="material-icons play-icon">play_circle</span>
+        </article>
+      </section>
+
+      <section class="playlist-playbar">
+
+        <img src="img-candyman.webp" alt="" id="playlist-album">
+        <p id="playlist-artist">Zedd & Aloe Blacc</p>
+        <p id="playlist-song">Candyman</p>
+
+        <div class="progress-wrapper">
+            <p class="start-time" id="start-timer">0:00</p>
+            <div class="progress-bar"><div id="current-time"></div></div>
+            <p class="end-time" id="end-timer">0:00</p>
+        </div>
+        
+
+        <section class="playbar">
+            <span class="material-icons rep">repeat</span>
+            <span class="material-icons f-r" onclick="rewind(this)">fast_rewind</span>
+            <span class="material-icons p-c" id="play-pause" onclick="playpause(this)">play_circle</span>
+            <span class="material-icons f-f" onclick="forward(this)">fast_forward</span>
+            <span class="material-icons sh">shuffle</span>
+        </section>
+
+    </section>
+      
+    </main>
+    <script src="playlist.js"></script>
+  </body>
 </html>
