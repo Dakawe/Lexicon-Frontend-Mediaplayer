@@ -1,3 +1,6 @@
+* {
+  margin: 0;
+}
 body {
   margin: 0;
   height: 100vh;
@@ -25,7 +28,7 @@ p {
 }
 
 .animated-background {
-  background-image: url(space.png);
+  background-image: url(img/space.png);
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -33,12 +36,12 @@ p {
 
   scale: 2;
 
-  animation: rotate 300s linear infinite;
+  animation: rotate 333s linear infinite;
 }
 
 @keyframes rotate {
   50% {
-    scale: 4;
+    scale: 3;
     transform: rotate(180deg);
   }
   100% {
@@ -73,18 +76,18 @@ p {
   flex-wrap: wrap;
   background-color: black;
   border: 1px solid #736c93;
-  background-image: url(img-rocket-to-the-moon.jpg);
+  background-image: url(img/img-rocket-to-the-moon.jpg);
   background-size: cover;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 50px 50px 130px rgba(68, 62, 161, 0.2);
+  box-shadow: 50px 50px 66px rgba(141, 135, 217, 0.2);
 }
 
 .playlist-header {
-  border-bottom: 2px solid #736c93;
+  border-bottom: 1px solid #292730;
   font-size: 16px;
   width: 100%;
-  background-color: rgba(14, 6, 36, 0.9);
+  background-color: rgba(0, 0, 0, 0.95);
   padding: 8px;
   padding-top: 12px;
   display: flex;
@@ -105,7 +108,7 @@ p {
 
 .playlist-playbar {
   width: 50%;
-  background-color: rgba(27, 28, 73, 0.9);
+  background-color: rgba(8, 8, 35, 0.85);
   height: 500px;
   overflow: hidden;
   display: flex;
@@ -116,9 +119,10 @@ p {
 
 #playlist-album {
   width: 275px;
+  height: 275px;
   margin-block: 25px;
   border: 3px double white;
-  box-shadow: 5px 5px 25px darkcyan;
+  box-shadow: 5px 5px 14px rgb(66, 106, 106);
   border-radius: 25px;
 }
 #playlist-artist {
@@ -126,12 +130,26 @@ p {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 3px;
+  transform: scale(1.2, 1.2);
+  background-color: rgba(0, 0, 0, 0.65);
+  border-top: 1px solid #000000;
+  width: 100%;
+  text-align: center;
+  margin-bottom:2px;
+  padding-top: 5px;
 }
 #playlist-song {
-  font-size: 15px;
-  font-weight: bold;
+  font-variant-caps: small-caps;
+  font-size: 16px;
   margin-top: 3px;
-  color: rgb(196, 189, 244);
+  color: rgb(178, 240, 255);
+  transform: scale(1.2, 1.2);
+  background-color: rgba(0, 0, 0, 0.65);
+  border-bottom: 1px solid #000000;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .progress-wrapper {
@@ -163,7 +181,6 @@ p {
 }
 
 .playbar {
-  margin-top: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,7 +216,7 @@ p {
 
 .songbox {
   cursor: pointer;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.96);
   width: 100%;
   height: 75px;
   display: flex;
@@ -211,8 +228,9 @@ p {
 .album-cover {
   margin-left: 15px;
   width: auto;
-  height: 75%;
-  border: 1px solid rgb(53, 53, 53);
+  height: 55px;
+  width: 55px;
+  border: 1px solid rgb(82, 82, 82);
   border-radius: 7px;
 }
 .playlist-wrapper {
@@ -223,15 +241,15 @@ p {
   font-family: "gotham-bold";
   font-size: 16px;
   font-variant-caps: small-caps;
-  color: grey;
+  color: rgb(146, 146, 190);
 }
 .album-title {
   font-size: 15px;
-  color: darkgrey;
+  color: rgb(255, 255, 255);
 }
 
 .play-icon {
-  color: rgb(67, 67, 67);
+  color: rgb(146, 146, 190);
 }
 
 @font-face {
@@ -246,8 +264,10 @@ p {
 
 .songbox:hover {
   background-color: rgba(0, 0, 25, 0.9);
+  border-block: 1px solid rgb(49, 49, 49);
   .play-icon {
-    color: rgb(141, 141, 141);
+    color: rgb(227, 227, 255);
+    animation: album-hover 0.33s forwards;
   }
   .playlist-wrapper > .song-title {
     color: white;
@@ -257,13 +277,13 @@ p {
   }
   .album-cover {
     border: 1px solid white;
-    animation: album-hover 0.6s forwards;
+    animation: album-hover 0.5s forwards;
   }
 }
 
 @keyframes album-hover {
   100% {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 }
 @keyframes album-playing {

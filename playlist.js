@@ -34,7 +34,7 @@ function play(self, css, song, imgSong) {
 
 function playpause(self) {
   if (!currentSong) {
-    play(document.getElementById("songbox-first"), "songbox-live", "rocket.mp3", "img-rocket-to-the-moon.jpg");
+    play(document.getElementById("songbox-first"), "songbox-live", "mp3/rocket.mp3", "img/img-rocket-to-the-moon.jpg");
     return;
   }
   console.log(audio.paused);
